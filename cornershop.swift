@@ -154,12 +154,16 @@ func rearrangeWindows(screenIndex: Int, pixelGap: Int = 30) {
             continue
         }
 
+        // --- this is the only piece I did not vibe code :)
+
         let newWidth = Int(maxUsableWidth) - ((counterWidth - 1) * pixelGap)
         let newHeight = Int(maxUsableHeight) - (counter * pixelGap)
         let origin = CGPoint(x: cgBounds.minX, y: cgBounds.minY + menuBarHeight + CGFloat(counter * pixelGap))
 
         counter += 1
         counterWidth -= 1
+
+        // --- that's it
 
         var pos = origin
         if let posValue = AXValueCreate(.cgPoint, &pos) {
